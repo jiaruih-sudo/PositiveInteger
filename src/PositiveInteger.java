@@ -30,4 +30,26 @@ public class PositiveInteger {
         return sum > num;
     }
 
+    public boolean isNarcissistic() {
+        int digits = 0;
+        int temp = num;
+
+        while (temp > 0) {
+            digits++;
+            temp /= 10;
+        }
+
+        int sum = 0;
+        temp = num;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += (int) Math.pow(digit, digits);
+            temp /= 10;
+        }
+
+        return sum == num;
+    }
+
+
 }
