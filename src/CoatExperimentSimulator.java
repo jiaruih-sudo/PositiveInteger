@@ -19,7 +19,16 @@ public class CoatExperimentSimulator {
     }
 
     public int[] simulateCoatExperiment(int iterations) {
-        return null;
+        int[] results = new int[iterations];
+
+        for (int i = 0; i < iterations; i++) {
+            int[] permutation =
+                    RandomOrderGenerator.getRandomOrder(numberOfPeople);
+
+            results[i] = numPplWhoGotTheirCoat(permutation);
+        }
+
+        return results;
     }
 
     public double answerToQuestionOne(int[] results) {
