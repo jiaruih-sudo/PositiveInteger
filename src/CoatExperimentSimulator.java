@@ -32,9 +32,16 @@ public class CoatExperimentSimulator {
     }
 
     public double answerToQuestionOne(int[] results) {
-        return 0.0;
-    }
+        int zeroCount = 0;
 
+        for (int i = 0; i < results.length; i++) {
+            if (results[i] == 0) {
+                zeroCount++;
+            }
+        }
+
+        return (double) zeroCount / results.length;
+    }
     public double answerToQuestionTwo(int[] results) {
         return 0.0;
     }
