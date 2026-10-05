@@ -1,16 +1,27 @@
-public double runExperiment(int totalDrops) {
-    int hits = 0;
+import java.util.*;
 
-    for (int i = 0; i < totalDrops; i++) {
-        double yLow = generator.nextDouble() * 2;
-        double alpha = generator.nextDouble() * 180;
+public class Needle {
 
-        double yHigh = yLow + Math.sin(Math.toRadians(alpha));
+    private Random generator;
 
-        if (yHigh >= 2) {
-            hits++;
-        }
+    public Needle() {
+        generator = new Random();
     }
 
-    return (double) totalDrops / hits;
+    public double runExperiment(int totalDrops) {
+        int hits = 0;
+
+        for (int i = 0; i < totalDrops; i++) {
+            double yLow = generator.nextDouble() * 2;
+            double alpha = generator.nextDouble() * 180;
+
+            double yHigh = yLow + Math.sin(Math.toRadians(alpha));
+
+            if (yHigh >= 2) {
+                hits++;
+            }
+        }
+
+        return (double) totalDrops / hits;
+    }
 }
