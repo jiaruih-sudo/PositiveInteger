@@ -42,6 +42,7 @@ public class CoatExperimentSimulator {
 
         return (double) zeroCount / results.length;
     }
+
     public double answerToQuestionTwo(int[] results) {
         int sum = 0;
 
@@ -51,3 +52,4 @@ public class CoatExperimentSimulator {
 
         return (double) sum / results.length;
     }
+}
